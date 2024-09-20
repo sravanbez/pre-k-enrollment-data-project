@@ -1,0 +1,34 @@
+Submission Instructions: 
+1. Provide a Git repository link containing your code. - Done 
+2. Provide a SQL query that will answer this question: 
+    a. In 2021, which 10 states had the highest number of children enrolled in Pre-K? 
+    SELECT state AS state_name, SUM(enrollment) AS total_enrollment
+    FROM spectrum_schema.pre_k_enrollment_data
+    WHERE year = 2021
+    GROUP BY state
+    ORDER BY total_enrollment DESC
+    LIMIT 10;
+3. Answer the following questions: 
+    a. Please list all tools and technologies you used to complete this assignment. 
+        The list of Tools used for this assignement are 
+        Visual Studio Code, 
+        AWS free tier account - S3 bucket, AWS Lambda, AWS Glue, Redshift Spectrum, Amazon EventBridge, AWS IAM
+        Python libs - Boto3, Requests
+        Postman 
+b. Explain your rationale for your approach to this task. 
+    My approach was to create a solution which is frugal (cost-effective), automated, fault-tolerant, 
+    scalable and easy to maintain and handles data ingestion (Lambda), storage(s3) and querying effectively (Glue, Spectrum, data catalogs). 
+    It also supports scheduling and orchestration (cloudwatch events) as well. 
+C. What else would you do if you had more time? 
+
+If I had more time, I wouldn’t limit myself to Pre-K enrollment data. 
+I would also focus on streamlining education data holistically and create dedicated dashboards on AWS QuickSight 
+for metrics like enrollment, discipline and incidents, harassment or bullying, chronic absenteeism, restraint and seclusion, 
+state assessments, teachers and staff, and other relevant data available in the education portal. 
+I would name this initiative the Education 360 Metrics Project, which would provide an end-to-end, 
+one-stop solution for all education-related analytics.
+
+Along with the Data analytics, I would also extract all the relevant source objects and run multiple analytics on the 
+enrollment data, segmented across various data cohorts. Additionally, I would explore incorporating a machine learning 
+component using AWS SageMaker to develop metrics and models based on the enrollment data segmented by grade, race, sex,
+ and geographical location.
